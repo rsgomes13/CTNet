@@ -50,7 +50,7 @@ from torch.autograd import Variable
 
 
 class PatchEmbeddingCNN(nn.Module):
-    def __init__(self, f1=16, kernel_size=64, D=2, pooling_size1=8, pooling_size2=8, dropout_rate=0.3, number_channel=22, emb_size=40):
+    def __init__(self, f1=8, kernel_size=64, D=2, pooling_size1=8, pooling_size2=8, dropout_rate=0.3, number_channel=22, emb_size=40):
         super().__init__()
         f2 = D*f1
         self.cnn_module = nn.Sequential(
@@ -187,9 +187,9 @@ class TransformerEncoder(nn.Sequential):
 
 
 class BranchEEGNetTransformer(nn.Sequential):
-    def __init__(self, heads=4, 
+    def __init__(self, heads=2, 
                  depth=6, 
-                 emb_size=40, 
+                 emb_size=16, 
                  number_channel=22,
                  f1 = 20,
                  kernel_size = 64,
@@ -224,11 +224,11 @@ class PositioinalEncoding(nn.Module):
         
 # CTNet       
 class EEGTransformer(nn.Module):
-    def __init__(self, heads=4, 
-                 emb_size=40,
+    def __init__(self, heads=2, 
+                 emb_size=16,
                  depth=6, 
                  database_type='A', 
-                 eeg1_f1 = 20,
+                 eeg1_f1 = 8,
                  eeg1_kernel_size = 64,
                  eeg1_D = 2,
                  eeg1_pooling_size1 = 8,
@@ -761,3 +761,4 @@ if __name__ == "__main__":
                     validate_ratio = validate_ratio,
                   )
     print(time.asctime(time.localtime(time.time())))
+
