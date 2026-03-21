@@ -44,7 +44,7 @@ run `python3 main_subject_specific.py` or CTNet_2a_82.91.ipynb
 #### For subject-independent
 run main_cross_subject_LOSO.ipynb
 
-#### Under the LOSO setting, if data augmentation is required, it is recommended to refer to the updated training framework code, in which the data augmentation pipeline has been optimized: specifically, S&R performs data augmentation on each subject in the training set one by one, and then concatenates the data from different subjects to construct the training set. Refer to the LOSO code of [TCANet](https://github.com/snailpt/TCANet) [https://github.com/snailpt/TCANet/blob/main/LOSO_TCANet.ipynb ].
+#### Under the LOSO setting, if data augmentation is required, it is recommended to refer to the updated training framework code, in which the data augmentation pipeline has been optimized: specifically, S&R performs data augmentation on each subject in the training set one by one, and then concatenates the data from different subjects to construct the training set. Refer to the LOSO code of [TCANet](https://github.com/snailpt/TCANet). https://github.com/snailpt/TCANet/blob/main/LOSO_TCANet.ipynb 
 
 ### Experimental Setup: 
 The original training set was split into training and validation subsets with a ratio of 7:3. Data augmentation was applied to expand the training set to three times (N_AUG=3) its original size.
